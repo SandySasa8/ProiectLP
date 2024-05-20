@@ -66,7 +66,6 @@ def play_hangman():
         else:
             missed_letters += guess
             tries -= 1
-            print(display_hangman(tries))
             if tries == 0:
                 display_board(missed_letters, correct_letters, secret_word,tries)
                 print('You have run out of guesses!\nAfter ' + str(len(missed_letters)) + ' missed guesses and ' + str(len(correct_letters)) + ' correct guesses, the word was "' + secret_word + '"')
