@@ -1,5 +1,6 @@
 import random
 
+
 words = ['ciorba', 'scrisoare', 'animal', 'date', 'ananas']
 
 def get_random_word():
@@ -8,7 +9,7 @@ def get_random_word():
     Returneaza un cuvant aleatoriu din lista words
     """
 
-def display_board(missed_letters, correct_letters, secret_word,tries):
+def display_board(missed_letters, correct_letters, secret_word, tries):
     """
     Ce apare in timpul jocului
     """
@@ -48,7 +49,7 @@ def play_hangman():
     missed_letters = ''
 
     while True:
-        display_board(missed_letters, correct_letters, secret_word,tries)
+        display_board(missed_letters, correct_letters, secret_word, tries)
         guess = get_guess(missed_letters + correct_letters)
 
         if guess in secret_word:
@@ -67,7 +68,7 @@ def play_hangman():
             missed_letters += guess
             tries -= 1
             if tries == 0:
-                display_board(missed_letters, correct_letters, secret_word,tries)
+                display_board(missed_letters, correct_letters, secret_word, tries)
                 print('You have run out of guesses!\nAfter ' + str(len(missed_letters)) + ' missed guesses and ' + str(len(correct_letters)) + ' correct guesses, the word was "' + secret_word + '"')
                 break
 
