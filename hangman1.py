@@ -1,6 +1,6 @@
 import random
 
-words = ['ciorba', 'scrisoare', 'animal', 'date', 'ananas']
+words = ['ciorba', 'scrisoare', 'animal', 'pate', 'ananas']
 
 def get_random_word():
     return random.choice(words)
@@ -10,7 +10,7 @@ Returneaza un cuvant aleatoriu din lista words
 
 def display_board(missed_letters, correct_letters, secret_word,tries):
     """
-    Arata dimensiunea cuvantului secret folosind linii si arata ce litere ai folosit
+    Ce apare in timpul jocului
     """
     print()
     print(display_hangman(tries))
@@ -26,7 +26,7 @@ def display_board(missed_letters, correct_letters, secret_word,tries):
 
 def get_guess(already_guessed):
     """
-    Miceste litera inserata si arata mesaje cu referire la litera introdusa
+    Mesajele cu referire la litera introdusa
     """
     while True:
         guess = input('Guess a letter: ').lower()
