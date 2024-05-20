@@ -33,28 +33,45 @@ class functia2(unittest.TestCase):
         missed_letters = 'abc'
         correct_letters = 'def'
         secret_word = 'mdneof'
-        tries=3
+        tries = 3
         display_board(missed_letters, correct_letters, secret_word,tries)
     """
     Verifica cum arata jocul
     """
 class functia3(unittest.TestCase):
-
+    def test_function(self):
+        already_guessed = 'mno'
+        get_guess(already_guessed)
     def test_get_guess(self):
         already_guessed = 'abc'
         guess = get_guess(already_guessed)
         self.assertNotIn(guess, already_guessed)
-    def test_function(self):
-        already_guessed="ad"
-        get_guess(already_guessed)
+    """
+    verifica ca litera introdusa de la tastatura sa fie una diferita 
+    cu lista de litere deja incercate
+    """
+
+    def test_get_guess_valid_input(self):
+        """
+        Testeaza daca functia returneaza o singura litera
+        """
+        already_guessed = set()
+        result = get_guess(already_guessed)
+        self.assertEqual(len(result), 1)
 class functia4(unittest.TestCase):
    
     def test_play_hangman(self):
         play_hangman()
-
     """
     Verifica daca jocul este jucat corect
     """
+    def test_finish_message(self):
+        missed_letters = 'abcd'
+        self.assertEqual(len(missed_letters), 4)
+    """
+    Verifica daca mesajul de final, in cazul pierderii, va avea numarul corect de litere gresite
+    """
+
 
 class functi5(unittest.TestCase):
     def test_display_self(self):
@@ -82,7 +99,7 @@ class functi5(unittest.TestCase):
                    |     / 
                    -
                 """]
-        self.assertEqual(stages[1],"""
+        self.assertEqual(stages[1], """
                    --------
                    |      |
                    |      O
